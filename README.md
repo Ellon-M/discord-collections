@@ -1,3 +1,3 @@
-# Discord Bots
+# My private guilds discord bots
 
 ...pending readme....
