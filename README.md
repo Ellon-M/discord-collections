@@ -1,2 +1,3 @@
-# discordbots
+# Discord Bots
+
 ...pending readme....
