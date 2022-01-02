@@ -10,9 +10,10 @@ const globPromise = promisify(glob);
 module.exports = async (client) => {
 
     // Commands
-    const commandFiles = await globPromise(`${process.cwd()}/commands/**/*.js`);
+    const commandFiles = await globPromise(`${process.cwd()}/commands/*.js`);
+    console.log(`Current directory: ${process.cwd()}`);
 
-    commandFiles.map((value) => {
+    commandFiles.map((value) => {   
         const file = require(value);
         const splitted = value.split("/");
         const directory = splitted[splitted.length - 2];
@@ -42,19 +43,14 @@ module.exports = async (client) => {
         if (["MESSAGE", "USER"].includes(file.type)) delete file.description;
         arrayOfSlashCommands.push(file);
     });
+
     client.on("ready", async () => {
         // Register for a single guild
         await client.guilds.cache
             .get("774571356473917440")
             .commands.set(arrayOfSlashCommands);
 
-        // Register for all the guilds the bot is in
-        // await client.application.commands.set(arrayOfSlashCommands);
-
         // register custom commands to guild
-
-        // try roles here...
-
         customCommandModel.find().then((data) => {
             data.forEach((cmd) => {
                 const guild = client.guilds.cache.get(cmd.guildId);

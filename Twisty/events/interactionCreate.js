@@ -1,6 +1,6 @@
 const client = require("../index");
 const customCommandModel = require('../customCommands/custom-db');
-const { GuildMember } = require("discord.js");
+const { GuildMember, Role } = require("discord.js");
 
 client.on("interactionCreate", async (interaction) => {
 
@@ -13,12 +13,12 @@ client.on("interactionCreate", async (interaction) => {
         const cmd = client.slashCommands.get(interaction.commandName);
 
     if (cmd) {
-       if (interaction.commandName === 'cs' && interaction.memberPermissions.bitfield !== 1099511627775n) {
+       // only register custom commands from the admin
+       if (interaction.commandName === 'cs' && interaction.member.user.username != 'e11on') {
             return interaction.followUp({
                 content: 'You do not have permission to use this command!'
             })
         }
-        // console.log(interaction.memberPermissions.bitfield);
 
         const args = [];
 
