@@ -7,7 +7,7 @@
 Will Majorly provide a complete moderation suite, a fast way to configure roles, antispam events, media notifications 
 and any other utilities of personal choice.
 
-### **Commands List** *(...ongoing)*
+### **Current Commands List** *(...ongoing)*
 
   `!ban` - ban guild members of lower position
   
