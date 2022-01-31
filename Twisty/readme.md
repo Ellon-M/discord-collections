@@ -21,6 +21,8 @@ and any other utilities of personal choice.
   
   `!blacklist` - blacklists certain words/phrases/sentences from being mentioned in the server
   
+  `!searchimage` - returns a single image from google that matches the search query provided
+  
   `/echo` - repeat a sent message
   
   `/cs create` - create a custom command 
