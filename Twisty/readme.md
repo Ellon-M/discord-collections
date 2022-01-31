@@ -15,6 +15,12 @@ and any other utilities of personal choice.
   
   `!kick` - kick guild members of lower position
   
+  `!antiswear-on` - turn on antiswear - prevents guild members from using swear words
+  
+  `!antiswear-off` - turns off antiswear - allows guild members to use swear words
+  
+  `!blacklist` - blacklists certain words/phrases/sentences from being mentioned in the server
+  
   `/echo` - repeat a sent message
   
   `/cs create` - create a custom command 
