@@ -7,11 +7,10 @@ const customCommandModel = require('../customCommands/custom-db');
 const globPromise = promisify(glob);
 
 
-module.exports = async (client) => {
+module.exports = handler = async (client) => {
 
     // Commands
     const commandFiles = await globPromise(`${process.cwd()}/commands/*.js`);
-    console.log(`Current directory: ${process.cwd()}`);
 
     commandFiles.map((value) => {   
         const file = require(value);
@@ -69,3 +68,5 @@ module.exports = async (client) => {
 
     mongoose.connect(mongooseConnectionString).then(() => console.log('Connected to mongodb'));
 };
+
+    

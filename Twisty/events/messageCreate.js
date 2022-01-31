@@ -13,10 +13,7 @@ client.on("messageCreate", async (message) => {
         .trim()
         .split(/ +/g);
     const command = client.commands.get(cmd.toLowerCase()) || client.commands.find(c => c.aliases?.includes(cmd.toLowerCase()));
-    // console.log(command);
-    // console.log(command.userPermissions);
 
     if (!command) return;
     await command.run({client, message, args});
-
 });
