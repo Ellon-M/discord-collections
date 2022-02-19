@@ -22,12 +22,12 @@ module.exports = {
                 return
             }
         }
-            const cont = message.content;
-            const splitCont = cont.split(' ');
-            splitCont.shift();
-            const mergedCont = splitCont.join(' ');
-            blacklisted.push(mergedCont);
-            await blacklistModel.find({}).distinct('words').updateOne({words: blacklisted});
-            message.channel.send('Blacklisted. The word(s) can no longer be used in the server');
+        const cont = message.content;
+        const splitCont = cont.split(' ');
+        splitCont.shift();
+        const mergedCont = splitCont.join(' ');
+        blacklisted.push(mergedCont);
+        await blacklistModel.find({}).distinct('words').updateOne({words: blacklisted});
+        message.channel.send('Blacklisted. The word(s) can no longer be used in the server');
     }
 }
